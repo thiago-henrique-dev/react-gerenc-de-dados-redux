@@ -1,21 +1,27 @@
 import './App.css';
+import React, { useState } from 'react';
 import Intervalo from './components/Intervalo';
 import Media from './components/Media';
 import Soma from './components/Soma';
 import Sorteio from './components/Sorteio';
 
 function App() {
+
+  const [min, setMin] = useState(1)
+  const [max, setMax] = useState(10)
+
   return (
     <div className="App">
       <h1>Exercício React-Redux(Simples)</h1>
       <div className="linha">
-        <Intervalo red></Intervalo>
+        <Intervalo min={min} max={max} 
+        onMinChanged={setMin} onMaxChanged={setMax}></Intervalo>
 
       </div>
       <div className="linha">
-        <Media minimo={1} maximo={10}></Media>
-        <Soma minimo={1} maximo={10}></Soma>
-        <Sorteio minimo={1} maximo={10}></Sorteio>
+        <Media min={min} max={max}></Media>
+        <Soma min={min} max={max}></Soma>
+        <Sorteio min={min} max={max}></Sorteio>
 
 
       </div>
