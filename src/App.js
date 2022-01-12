@@ -13,9 +13,9 @@ function App() {
 
       </div>
       <div className="linha">
-        <Media></Media>
-        <Soma></Soma>
-        <Sorteio></Sorteio>
+        <Media minimo={1} maximo={10}></Media>
+        <Soma minimo={1} maximo={10}></Soma>
+        <Sorteio minimo={1} maximo={10}></Sorteio>
 
 
       </div>
