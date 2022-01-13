@@ -1,16 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux' // DEVOLVER UM COMPONENTE QUE TEM LIGAÇÃO COM O ESTADO ATUAL DA MINHA APP
+
 import Card from './Card'
 
-const Media = props => {
+function Media(props) {
+    const { min, max } = props;
+    console.log(props)
 
     return (
         <Card title="Média dos números" green>
             <div>
                 <span>
                     <span>Resultado: </span>
-                  <strong>{10}</strong>
+                  <strong>{(max + min) / 2}</strong>
 
-                 </span>
+                 </span>    
        
             </div>
 
@@ -19,4 +23,14 @@ const Media = props => {
     )
 }
 
-export default Media
+function mapStateToProps(state){
+    return {
+         min: state.numeros.min,
+         max: state.numeros.max,
+         primeiroNome: state.nomes[0]
+
+
+    }
+}
+
+export default connect(mapStateToProps)(Media)
