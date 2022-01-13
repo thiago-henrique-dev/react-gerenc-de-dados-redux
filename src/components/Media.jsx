@@ -27,7 +27,6 @@ function mapStateToProps(state){
     return {
          min: state.numeros.min,
          max: state.numeros.max,
-         primeiroNome: state.nomes[0]
 
 
     }
