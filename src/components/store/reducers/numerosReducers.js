@@ -1,3 +1,9 @@
+import {
+    NUM_MIN_ALTERADO,
+    NUM_MAX_ALTERADO
+} from '../actions/actionType'
+
+
 const initialState = {
     min: 7,
     max:31
@@ -6,14 +12,14 @@ const initialState = {
 function ac(state = initialState, action){
         
     switch(action.type){
-        case 'NUM_MIN_ALTERADO':
+        case NUM_MIN_ALTERADO:
             return {
                 ...state,
                 min: action.payload
                 
                 //CASO NAO SEJA ESSA AÇÃO ELE VAI RETORNAR O OBJETO DEBAIXO QUE É O VALOR PADRAO
             }
-        case 'NUM_MAX_ALTERADO':
+        case NUM_MAX_ALTERADO:
             return {
                 ...state,
                 max: action.payload
