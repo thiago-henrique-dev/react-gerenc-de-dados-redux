@@ -8,7 +8,13 @@ const reducers = combineReducers({
                 return {
                     ...state,
                     min: action.payload
+                    
                     //CASO NAO SEJA ESSA AÇÃO ELE VAI RETORNAR O OBJETO DEBAIXO QUE É O VALOR PADRAO
+                }
+            case 'NUM_MAX_ALTERADO':
+                return {
+                    ...state,
+                    max: action.payload
                 }
                 default:
                     return {
